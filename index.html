@@ -56,12 +56,24 @@
     </p>
 
     <script>
-        const API_BASE = "https://contract-weakness-api-ezdzg5hzcjfpfpa2.uksouth-01.azurewebsites.net/api";
-        function activate(plan) {
-            window.location.href = `${API_BASE}/subscription/activate?plan=${encodeURIComponent(plan)}`;
+        const APP_ORIGIN = "https://contract-weakness-api-ezdzg5hzcjfpfpa2.uksouth-01.azurewebsites.net";
+
+        function loginThenGo(pathAfterLogin) {
+            // Uses App Service Easy Auth sign-in endpoint.
+            // After login, user gets redirected to the path you specify.
+            const loginUrl = `${APP_ORIGIN}/.auth/login/aad?post_login_redirect_uri=${encodeURIComponent(pathAfterLogin)}`;
+            window.location.href = loginUrl;
         }
-        document.getElementById("resetLink").href = `${API_BASE}/subscription/reset`;
+
+        function activate(plan) {
+            loginThenGo(`/api/subscription/activate?plan=${encodeURIComponent(plan)}`);
+        }
+
+        // Update reset link to go through login too
+        document.getElementById("resetLink").href =
+            `${APP_ORIGIN}/.auth/login/aad?post_login_redirect_uri=${encodeURIComponent("/api/subscription/reset")}`;
     </script>
+
 </body>
 
 </html>
