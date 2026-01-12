@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Activated</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            max-width: 720px;
+        }
+
+        .box {
+            padding: 16px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #f7fff7;
+        }
+
+        a {
+            color: #0067b8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>✅ Subscription activated</h1>
+        <p id="planLine">Plan activated.</p>
+        <p>Now go back to your Copilot agent and run your request again — it should unlock based on this plan.</p>
+        <p><a href="/index.html">Return to plan selector</a></p>
+    </div>
+
+    <script>
+        const p = new URLSearchParams(location.search).get("plan");
+        if (p) document.getElementById("planLine").textContent = `Plan: ${p}`;
+    </script>
+</body>
+
+</html>
