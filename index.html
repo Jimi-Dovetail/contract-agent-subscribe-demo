@@ -45,6 +45,45 @@
     <button onclick="activate('Silver')">Activate Silver</button><br />
     <button onclick="activate('Gold')">Activate Gold</button><br />
 
+
+<hr style="margin: 24px 0;" />
+
+<h2 style="margin-bottom: 8px;">What you get</h2>
+<p style="margin-top: 0; color: #555;">
+    Simple demo tiers (no payment). Pick the tier that matches the depth you need.
+</p>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 12px;">
+    <div style="border: 1px solid #e5e5e5; border-radius: 10px; padding: 14px;">
+        <h3 style="margin: 0 0 8px;">Bronze</h3>
+        <ul style="margin: 0; padding-left: 18px;">
+            <li><strong>Quick review only</strong> (top risks)</li>
+            <li>General Counsel lens only</li>
+            <li>No precedent bank signals</li>
+        </ul>
+    </div>
+
+    <div style="border: 1px solid #e5e5e5; border-radius: 10px; padding: 14px;">
+        <h3 style="margin: 0 0 8px;">Silver</h3>
+        <ul style="margin: 0; padding-left: 18px;">
+            <li><strong>Quick + Deep review</strong></li>
+            <li>General Counsel lens only</li>
+            <li>No precedent bank signals</li>
+        </ul>
+    </div>
+
+    <div style="border: 1px solid #e5e5e5; border-radius: 10px; padding: 14px;">
+        <h3 style="margin: 0 0 8px;">Gold</h3>
+        <ul style="margin: 0; padding-left: 18px;">
+            <li><strong>Quick + Deep review</strong></li>
+            <li>All lenses (GC + Privacy + Commercial + Security)</li>
+            <li><strong>Precedent bank signals enabled</strong></li>
+        </ul>
+    </div>
+</div>
+
+
+
     <p class="note">
         Clicking a plan sends you to a secure activation endpoint (your Function App).
         Because the Function App uses Entra SSO, you may be prompted to sign in.
